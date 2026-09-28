@@ -1,23 +1,31 @@
 {
   "expo": {
-    "name": "ameg-business",
+    "name": "Ameg Business",
     "slug": "ameg-business",
     "version": "1.0.0",
+    "scheme": "ameg-business",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "amegbusiness",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
+    "primaryColor": "#0F2D52",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "bundleIdentifier": "sn.majeliconnect.amegbusiness",
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "sn.majeliconnect.amegbusiness",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
@@ -25,18 +33,33 @@
     },
     "plugins": [
       "expo-router",
+      "expo-sqlite",
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 260
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Ameg Business accède à vos photos pour ajouter le logo de votre entreprise sur vos devis et factures.",
+          "cameraPermission": false,
+          "microphonePermission": false
         }
       ]
     ],
     "experiments": {
-      "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "d34743eb-8d45-429d-8f28-49f958e4faa2"
+      }
+    },
+    "owner": "majeli"
   }
 }
